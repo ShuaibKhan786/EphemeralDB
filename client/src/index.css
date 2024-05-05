@@ -1,0 +1,48 @@
+#root {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto; 
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdf6e4;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-container {
+  margin: 0;
+  padding: 0;
+  height: 97vh;
+  width: 98vw;
+}
+
+.welcomemessage-container {
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+  padding-bottom: 20px;
+  color: #7A4D22;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto; 
+  font-size: 1.25em;
+  line-height: 2rem;
+}
+
+.index_editor__JoDSg {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1.35em;
+  line-height: 2rem; 
+  letter-spacing: 0.02rem;
+  font-weight: 400;
+}
+
+code {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto; 
+  padding-left: 20px;
+}
