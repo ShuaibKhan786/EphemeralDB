@@ -2,16 +2,19 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
-	"github.com/rs/cors"
 	"github.com/ShuaibKhan786/EphemeralDB-client/internal/ephemeraldb"
+	"github.com/rs/cors"
+	"github.com/joho/godotenv"
 )
 
 var (
-	serverAddress = "shuaibhomelab.com:5040"
+	serverAddress = os.Getenv("EPHEMERALDB-URL")
 )
 
 type ServerResponse struct {
@@ -19,14 +22,25 @@ type ServerResponse struct {
 }
 
 func main() {
-	httpAddr := ":8090"
+	err := godotenv.Load("../.env")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	httpAddr := ":"+os.Getenv("PORT")
+
+	fmt.Println(httpAddr)
 
 	mux := http.NewServeMux()
+	mux.Handle("GET /",http.FileServer(http.Dir("../dist")))
 	mux.HandleFunc("GET /v1/ephemeraldb",executeCommand)
 
 	handler := cors.Default().Handler(mux)
 
-	http.ListenAndServe(httpAddr,handler)
+	err = http.ListenAndServe(httpAddr,handler)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 
@@ -34,7 +48,7 @@ func executeCommand(w http.ResponseWriter,r *http.Request) {
 	var res ServerResponse
 
 	queryValue, _ := url.ParseQuery(r.URL.RawQuery)
-
+	
 	if !queryValue.Has("command") {
 		res.Response = "command param not found"
 		jsonData, _ := json.Marshal(res)

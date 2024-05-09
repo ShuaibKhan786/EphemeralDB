@@ -12,8 +12,12 @@ function App() {
 
   const handler = async(cmd,cmdArg) => {
     const command = `${cmd} ${cmdArg}`
-    const url = `http://localhost:8090/v1/ephemeraldb?command=${command}`
-    const data = await fetch(url);
+    const url = `/v1/ephemeraldb?command=${command}`
+    const data = await fetch(url,{
+      method: "GET",
+      mode: "same-origin",
+      credentials: "same-origin",
+    });
     if (data.status === 400 || data.status === 404) {
       const actualData = await data.json();
       return <ResponseInjecttion response={actualData.response} state={true}/>
