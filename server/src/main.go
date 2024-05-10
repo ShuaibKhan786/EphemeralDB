@@ -9,12 +9,12 @@ import (
 	"os"
 	"strings"
 	"github.com/ShuaibKhan786/EphemeralDB-client/internal/ephemeraldb"
+	loadenv "github.com/ShuaibKhan786/EphemeralDB-client/internal/loadEnv"
 	"github.com/rs/cors"
-	"github.com/joho/godotenv"
 )
 
 var (
-	serverAddress = os.Getenv("EPHEMERALDB-URL")
+	dbAddress string = ""
 )
 
 type ServerResponse struct {
@@ -22,12 +22,17 @@ type ServerResponse struct {
 }
 
 func main() {
-	err := godotenv.Load("../.env")
+
+	
+	err := loadenv.Load("../")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	httpAddr := ":"+os.Getenv("PORT")
+	dbAddress = os.Getenv("EPHEMERALDB")
+	serverAddress := ":"+os.Getenv("PORT")
+
+	httpAddr := serverAddress
 
 	fmt.Println(httpAddr)
 
@@ -69,7 +74,7 @@ func executeCommand(w http.ResponseWriter,r *http.Request) {
 	rawBinaryData := cmd.BuildBinaryData()
 	rawBinaryDataSize := uint32(len(rawBinaryData))
 
-	conn, err := ephemeraldb.ConnectToServer(&serverAddress)
+	conn, err := ephemeraldb.ConnectToServer(&dbAddress)
 	if err != nil {
 		res.Response = "ephemeraldb server is down"
 		jsonData , _ := json.Marshal(res)
