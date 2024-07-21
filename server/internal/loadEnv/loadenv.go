@@ -12,6 +12,7 @@ import (
 const (
 	EnvFileExt = ".env"
 	EnvFileNotContentErr = ".env file doesnt exist in the given directory"
+	UnsuppEnvVarErr = "unsupported environment variable"
 )
 
 func Load(dirPath string) error {
@@ -81,7 +82,7 @@ func parseEnvVar(envVar string) error {
 	if len(splitEnvVar) == 2 {
 		return setEnvVar(splitEnvVar)
 	}else {
-		return errors.New("unsupported environment variable")
+		return errors.New(UnsuppEnvVarErr)
 	}
 }
 

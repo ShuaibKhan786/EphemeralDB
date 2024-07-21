@@ -1,0 +1,21 @@
+
+services:
+  c_tcp_server:
+    container_name: ephemeralDB-tcp-server
+    build: ./EphemeralDB
+    image: ephemraldb-server
+    networks:
+      - ephemeraldb-network
+  
+  go_web_server:
+    container_name: ephemeralDB-http-server
+    build: ./server
+    image: ephemeraldb-client
+    ports:
+      - "8090:8090"
+    networks:
+      - ephemeraldb-network
+
+networks:
+  ephemeraldb-network:
+    driver: bridge

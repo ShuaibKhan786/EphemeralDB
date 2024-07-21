@@ -1,0 +1,356 @@
+13888 execve("./test1", ["./test1"], 0x7ffc3738fac8 /* 28 vars */) = 0
+13888 brk(NULL)                         = 0x55cfef038000
+13888 arch_prctl(0x3001 /* ARCH_??? */, 0x7ffff4162d20) = -1 EINVAL (Invalid argument)
+13888 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f8636024000
+13888 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+13888 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+13888 newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=46023, ...}, AT_EMPTY_PATH) = 0
+13888 mmap(NULL, 46023, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f8636018000
+13888 close(3)                          = 0
+13888 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+13888 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\237\2\0\0\0\0\0"..., 832) = 832
+13888 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+13888 pread64(3, "\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0"..., 48, 848) = 48
+13888 pread64(3, "\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\302\211\332Pq\2439\235\350\223\322\257\201\326\243\f"..., 68, 896) = 68
+13888 newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2220400, ...}, AT_EMPTY_PATH) = 0
+13888 pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+13888 mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f8635def000
+13888 mprotect(0x7f8635e17000, 2023424, PROT_NONE) = 0
+13888 mmap(0x7f8635e17000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f8635e17000
+13888 mmap(0x7f8635fac000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f8635fac000
+13888 mmap(0x7f8636005000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x7f8636005000
+13888 mmap(0x7f863600b000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f863600b000
+13888 close(3)                          = 0
+13888 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f8635dec000
+13888 arch_prctl(ARCH_SET_FS, 0x7f8635dec740) = 0
+13888 set_tid_address(0x7f8635deca10)   = 13888
+13888 set_robust_list(0x7f8635deca20, 24) = 0
+13888 rseq(0x7f8635ded0e0, 0x20, 0, 0x53053053) = 0
+13888 mprotect(0x7f8636005000, 16384, PROT_READ) = 0
+13888 mprotect(0x55cfee104000, 4096, PROT_READ) = 0
+13888 mprotect(0x7f863605e000, 8192, PROT_READ) = 0
+13888 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+13888 munmap(0x7f8636018000, 46023)     = 0
+13888 rt_sigaction(SIGRT_1, {sa_handler=0x7f8635e80870, sa_mask=[], sa_flags=SA_RESTORER|SA_ONSTACK|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f8635e31520}, NULL, 8) = 0
+13888 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+13888 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f86355eb000
+13888 mprotect(0x7f86355ec000, 8388608, PROT_READ|PROT_WRITE) = 0
+13888 getrandom("\x91\xd3\x02\xd2\x42\xec\xb5\xed", 8, GRND_NONBLOCK) = 8
+13888 brk(NULL)                         = 0x55cfef038000
+13888 brk(0x55cfef059000)               = 0x55cfef059000
+13888 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+13888 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f8635deb910, parent_tid=0x7f8635deb910, exit_signal=0, stack=0x7f86355eb000, stack_size=0x7fff00, tls=0x7f8635deb640} => {parent_tid=[13889]}, 88) = 13889
+13889 rseq(0x7f8635debfe0, 0x20, 0, 0x53053053 <unfinished ...>
+13888 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13889 <... rseq resumed>)               = 0
+13888 <... rt_sigprocmask resumed>NULL, 8) = 0
+13889 set_robust_list(0x7f8635deb920, 24 <unfinished ...>
+13888 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+13889 <... set_robust_list resumed>)    = 0
+13888 <... mmap resumed>)               = 0x7f8634dea000
+13889 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13888 mprotect(0x7f8634deb000, 8388608, PROT_READ|PROT_WRITE <unfinished ...>
+13889 <... rt_sigprocmask resumed>NULL, 8) = 0
+13888 <... mprotect resumed>)           = 0
+13889 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+13888 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f86355ea910, parent_tid=0x7f86355ea910, exit_signal=0, stack=0x7f8634dea000, stack_size=0x7fff00, tls=0x7f86355ea640} => {parent_tid=[13890]}, 88) = 13890
+13890 rseq(0x7f86355eafe0, 0x20, 0, 0x53053053 <unfinished ...>
+13888 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13890 <... rseq resumed>)               = 0
+13888 <... rt_sigprocmask resumed>NULL, 8) = 0
+13890 set_robust_list(0x7f86355ea920, 24 <unfinished ...>
+13888 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+13890 <... set_robust_list resumed>)    = 0
+13888 <... mmap resumed>)               = 0x7f86345e9000
+13890 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13888 mprotect(0x7f86345ea000, 8388608, PROT_READ|PROT_WRITE <unfinished ...>
+13890 <... rt_sigprocmask resumed>NULL, 8) = 0
+13888 <... mprotect resumed>)           = 0
+13890 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+13888 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f8634de9910, parent_tid=0x7f8634de9910, exit_signal=0, stack=0x7f86345e9000, stack_size=0x7fff00, tls=0x7f8634de9640} => {parent_tid=[13891]}, 88) = 13891
+13891 rseq(0x7f8634de9fe0, 0x20, 0, 0x53053053 <unfinished ...>
+13888 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13891 <... rseq resumed>)               = 0
+13888 <... rt_sigprocmask resumed>NULL, 8) = 0
+13891 set_robust_list(0x7f8634de9920, 24 <unfinished ...>
+13888 mmap(NULL, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0 <unfinished ...>
+13891 <... set_robust_list resumed>)    = 0
+13888 <... mmap resumed>)               = 0x7f8633de8000
+13891 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13888 mprotect(0x7f8633de9000, 8388608, PROT_READ|PROT_WRITE <unfinished ...>
+13891 <... rt_sigprocmask resumed>NULL, 8) = 0
+13888 <... mprotect resumed>)           = 0
+13891 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 rt_sigprocmask(SIG_BLOCK, ~[], [], 8) = 0
+13888 clone3({flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, child_tid=0x7f86345e8910, parent_tid=0x7f86345e8910, exit_signal=0, stack=0x7f8633de8000, stack_size=0x7fff00, tls=0x7f86345e8640} => {parent_tid=[13892]}, 88) = 13892
+13892 rseq(0x7f86345e8fe0, 0x20, 0, 0x53053053 <unfinished ...>
+13888 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13892 <... rseq resumed>)               = 0
+13888 <... rt_sigprocmask resumed>NULL, 8) = 0
+13892 set_robust_list(0x7f86345e8920, 24 <unfinished ...>
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 <... set_robust_list resumed>)    = 0
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13892 rt_sigprocmask(SIG_SETMASK, [],  <unfinished ...>
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 <... rt_sigprocmask resumed>NULL, 8) = 0
+13889 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13888 <... futex resumed>)              = 1
+13890 newfstatat(1, "",  <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 <... newfstatat resumed>{st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}, AT_EMPTY_PATH) = 0
+13889 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f862bde8000
+13890 munmap(0x7f862bde8000, 2195456)   = 0
+13890 munmap(0x7f8630000000, 64913408)  = 0
+13890 mprotect(0x7f862c000000, 135168, PROT_READ|PROT_WRITE) = 0
+13890 write(1, "Task 1 is being executed by thre"..., 51) = 51
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1) = 1
+13892 <... futex resumed>)              = 0
+13890 write(1, "Task 2 is being executed by thre"..., 51 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 <... write resumed>)              = 51
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 0
+13890 <... futex resumed>)              = 1
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13890 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d4, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = 1
+13890 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13890 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13891 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 1
+13890 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = 1
+13890 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d4, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13889 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1) = 1
+13892 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d4, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13890 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 1
+13888 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = 1
+13890 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13890 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 1
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13890 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d4, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 1
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13891 <... futex resumed>)              = 0
+13890 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13890 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 1
+13888 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = 1
+13890 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d4, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d4, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13890 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 1
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = -1 EAGAIN (Resource temporarily unavailable)
+13890 <... futex resumed>)              = 0
+13888 futex(0x55cfee1050d0, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAIT_PRIVATE, 2, NULL <unfinished ...>
+13888 <... futex resumed>)              = 1
+13889 <... futex resumed>)              = 0
+13888 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13888 <... futex resumed>)              = 1
+13892 <... futex resumed>)              = 0
+13891 <... futex resumed>)              = 0
+13889 <... futex resumed>)              = 1
+13888 clock_nanosleep(CLOCK_REALTIME, 0, {tv_sec=20, tv_nsec=0},  <unfinished ...>
+13892 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13891 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1 <unfinished ...>
+13889 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13892 <... futex resumed>)              = 1
+13891 <... futex resumed>)              = 0
+13890 <... futex resumed>)              = 0
+13892 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13891 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13890 futex(0x55cfee105080, FUTEX_WAKE_PRIVATE, 1) = 0
+13890 futex(0x55cfee1050d4, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, FUTEX_BITSET_MATCH_ANY <unfinished ...>
+13888 <... clock_nanosleep resumed>0x7ffff4161dd0) = 0
+13888 exit_group(0)                     = ?
+13892 <... futex resumed>)              = ?
+13891 <... futex resumed>)              = ?
+13890 <... futex resumed>)              = ?
+13889 <... futex resumed>)              = ?
+13892 +++ exited with 0 +++
+13891 +++ exited with 0 +++
+13890 +++ exited with 0 +++
+13889 +++ exited with 0 +++
+13888 +++ exited with 0 +++
