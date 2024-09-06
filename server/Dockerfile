@@ -1,21 +1,27 @@
-# Use the official Golang image as the base image
-FROM golang:1.22
+ARG GO_VERSION="1.22"
+ARG ALPINE_VERSION="alpine3.20"
 
-# Set the working directory inside the container
-WORKDIR /usr/ephemeraldb-client
 
-# Copy the Go Modules files first and download the dependencies
+FROM golang:${GO_VERSION}-${ALPINE_VERSION} AS build-stage
+
+WORKDIR /home
+
 COPY go.mod go.sum ./
 RUN go mod download
 
-# Copy the rest of the application's source code
-COPY . .
+COPY internal/. /home/internal
+COPY src/. /home/src
 
-# Set the working directory for the build
-WORKDIR /usr/ephemeraldb-client/src
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o server ./src/main.go
 
-# Build the Go application
-RUN go build -v -o /usr/ephemeraldb-client/bin/main
 
-# Command to run the application
-CMD ["/usr/ephemeraldb-client/bin/main"]
+FROM scratch AS final-stage
+
+WORKDIR /home/server
+
+COPY --from=build-stage /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+
+COPY --from=build-stage /home/server ./
+
+
+CMD ["./server"]

@@ -28,16 +28,16 @@ body {
   color: #7A4D22;
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto; 
-  font-size: 1.25em;
-  line-height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
 }
 
 .index_editor__JoDSg {
   font-family: "Raleway", sans-serif !important;
   font-optical-sizing: auto !important;
-  font-size: 1.35em !important;
-  line-height: 2rem !important; 
-  letter-spacing: 0.02rem !important;
+  font-size: 1em !important;
+  line-height: 1.5rem !important; 
+  letter-spacing: 0.0001rem !important;
   font-weight: 400 !important;
 }
 

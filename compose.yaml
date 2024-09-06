@@ -1,11 +1,21 @@
-
 services:
   c_tcp_server:
     container_name: ephemeralDB-tcp-server
     build: ./EphemeralDB
     image: ephemraldb-server
+    ports:
+      - "5040:5040"
     networks:
       - ephemeraldb-network
+
+  react_app:
+    container_name: react-app-builder
+    build:
+      context: ./client
+    image: react-app
+    volumes:
+      - dist:/app/dist 
+    command: npm run build
   
   go_web_server:
     container_name: ephemeralDB-http-server
@@ -13,9 +23,20 @@ services:
     image: ephemeraldb-client
     ports:
       - "8090:8090"
+    environment:
+      - PORT=8090
+      - EPHEMERALDB=ephemeralDB-tcp-server:5040
+    depends_on:
+      - c_tcp_server
+      - react_app
     networks:
       - ephemeraldb-network
+    volumes:
+      - dist:/home/server/dist
 
 networks:
   ephemeraldb-network:
     driver: bridge
+
+volumes:
+  dist:

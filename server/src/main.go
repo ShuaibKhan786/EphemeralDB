@@ -9,7 +9,6 @@ import (
 	"os"
 	"strings"
 	"github.com/ShuaibKhan786/EphemeralDB-client/internal/ephemeraldb"
-	loadenv "github.com/ShuaibKhan786/EphemeralDB-client/internal/loadEnv"
 	"github.com/rs/cors"
 )
 
@@ -22,13 +21,6 @@ type ServerResponse struct {
 }
 
 func main() {
-
-	
-	err := loadenv.Load("../")
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	dbAddress = os.Getenv("EPHEMERALDB")
 	serverAddress := ":"+os.Getenv("PORT")
 
@@ -37,12 +29,12 @@ func main() {
 	fmt.Println(httpAddr)
 
 	mux := http.NewServeMux()
-	mux.Handle("GET /",http.FileServer(http.Dir("../dist")))
+	mux.Handle("GET /",http.FileServer(http.Dir("./dist")))
 	mux.HandleFunc("GET /v1/ephemeraldb",executeCommand)
 
 	handler := cors.Default().Handler(mux)
 
-	err = http.ListenAndServe(httpAddr,handler)
+	err := http.ListenAndServe(httpAddr,handler)
 	if err != nil {
 		log.Fatal(err)
 	}
